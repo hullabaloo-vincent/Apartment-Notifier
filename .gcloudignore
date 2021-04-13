@@ -1,0 +1,6 @@
+.git
+.gitignore
+.bat
+.idea
+.vscode
+__pycache__/
