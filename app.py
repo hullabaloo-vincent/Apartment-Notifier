@@ -21,10 +21,9 @@ def new_listing():
     craigslist_items = {
         'items': []
     }
-    m_size = 0
     sms_body = "Found the following apartments from Craigslist:"
     for result in cl_h.get_results(sort_by='newest', geotagged=True):
-        if result['has_image'] and m_size <= 5:
+        if result['has_image'] and len(craigslist_items['items']) <= 5:
             sms_body = sms_body + "\nApartment in " + str(result['where']) +  " for " + str(result['price']) + " : " + str(result['url'])
             craigslist_items['items'].append({
                 'title':str(result['name']),
@@ -32,7 +31,6 @@ def new_listing():
                 'where':str(result['where']),
                 'url':str(result['url'])
             })
-            m_size +=1
         else:
             break
     
