@@ -22,7 +22,6 @@ def new_listing():
         'items': []
     }
     m_size = 0
-    headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
     sms_body = "Found the following apartments from Craigslist:"
     for result in cl_h.get_results(sort_by='newest', geotagged=True):
         if result['has_image'] and m_size <= 5:
