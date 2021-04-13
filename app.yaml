@@ -4,8 +4,3 @@ handlers:
 - url: /.*
   secure: always
   script: auto
-
-- url: /static
-  static_dir: static
-  http_headers:
-    Access-Control-Allow-Origin: "*"
